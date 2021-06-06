@@ -15,3 +15,16 @@ This repository stores code and projects performed while researching shadow dete
   pages={223-230},
   doi={10.1109/CVPR.2010.5540209}}
 '''
+
+## <a name="CitingLISA"></a> Citation
+If you use LISA, SOBA, or SOAP, please use the following BibTeX entry.
+
+```
+@InProceedings{Wang_2020_CVPR,
+author = {Wang, Tianyu and Hu, Xiaowei and Wang, Qiong and Heng, Pheng-Ann and Fu, Chi-Wing},
+title = {Instance Shadow Detection},
+booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+month = {June},
+year = {2020}
+}
+```
