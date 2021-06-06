@@ -39,5 +39,7 @@ This repository stores code and projects performed while researching shadow dete
 
 4. Intrinsic Images by Entropy Minimization
 ```
-Finlayson G.D., Drew M.S., Lu C. (2004) Intrinsic Images by Entropy Minimization. In: Pajdla T., Matas J. (eds) Computer Vision - ECCV 2004. ECCV 2004. Lecture Notes in Computer Science, vol 3023. Springer, Berlin, Heidelberg. https://doi.org/10.1007/978-3-540-24672-5_46
-'''
+Finlayson G.D., Drew M.S., Lu C. (2004) Intrinsic Images by Entropy Minimization. 
+In: Pajdla T., Matas J. (eds) Computer Vision - ECCV 2004. ECCV 2004. 
+Lecture Notes in Computer Science, vol 3023. Springer, Berlin, Heidelberg. https://doi.org/10.1007/978-3-540-24672-5_46
+```
