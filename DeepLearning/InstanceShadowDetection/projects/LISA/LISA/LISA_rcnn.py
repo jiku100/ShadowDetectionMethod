@@ -82,10 +82,9 @@ class LISAROIHeads(StandardROIHeads):
             losses.update(self._forward_box(features_list, proposals))
             # During training the proposals used by the box head are
             # used by the mask, keypoint (and densepose) heads.
-            mask, loss_mask = self._forward_mask(features_list, proposals)
-            losses.update(loss_mask)
+            losses.update(self._forward_mask(features_list, proposals))
             losses.update(self._forward_keypoint(features_list, association_proposals))
-            return mask, proposals, losses
+            return proposals, losses
         else:
             
             pred_instances = self._forward_box(features_list, proposals)

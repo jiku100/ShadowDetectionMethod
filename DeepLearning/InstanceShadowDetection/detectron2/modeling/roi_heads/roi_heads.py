@@ -630,7 +630,7 @@ class StandardROIHeads(ROIHeads):
             proposal_boxes = [x.proposal_boxes for x in proposals]
             mask_features = self.mask_pooler(features, proposal_boxes)
             mask_logits = self.mask_head(mask_features)
-            return mask_logits, {"loss_mask": mask_rcnn_loss(mask_logits, proposals)}
+            return {"loss_mask": mask_rcnn_loss(mask_logits, proposals)}
         else:
             pred_boxes = [x.pred_boxes for x in instances]
             mask_features = self.mask_pooler(features, pred_boxes)
