@@ -38,7 +38,7 @@ $ python setup.py install
 ```
 
 ## Get Output
-
+Please dowload "BDLISA.pth" from [Google Drive](https://drive.google.com/drive/folders/19ISmPJ_2YshABSXjqblgzf6_zL3kc30d). Put the model in `projects/LISA/output_light/`. 
 ```bash
 $ cd projects/LISA/
 $ python test.py --input ./demo --config ./config/LISA_101_FPN_3x.yaml
