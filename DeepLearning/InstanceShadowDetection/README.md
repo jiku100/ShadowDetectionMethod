@@ -37,11 +37,11 @@ $ cd PythonAPI
 $ python setup.py install
 ```
 
-## Demo
+## Get Output
 
 ```bash
 $ cd projects/LISA/
-$ python demo.py --input ./demo/web-shadow0573.jpg --output ./ --config ./config/LISA_101_FPN_3x_demo.yaml
+$ python test.py --input ./demo --config ./config/LISA_101_FPN_3x.yaml
 ```
 
 ## Train
