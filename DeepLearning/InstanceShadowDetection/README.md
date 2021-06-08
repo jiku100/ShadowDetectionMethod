@@ -37,22 +37,6 @@ $ cd PythonAPI
 $ python setup.py install
 ```
 
-## Docker
-
-```bash
-$ cd InstanceShadowDetection/docker
-
-$ docker build --network=host --tag="instanceshadow" -f ./Dockerfile .
-
-$ docker run --gpus all -it --ipc=host --name=instanceshadow --network=host -v /YOURPATH:/data instanceshadow:latest
-```
-
-**(Nvidia-docker)[https://github.com/NVIDIA/nvidia-docker] is needed.**
-
-## Model, dataset and our results
-
-Please dowload from [Google Drive](https://drive.google.com/drive/folders/1MKxyq3R6AUeyLai9i9XWzG2C_n5f0ppP). Put the model in `projects/LISA/output_light/`. 
-
 ## Demo
 
 ```bash
@@ -63,20 +47,10 @@ $ python demo.py --input ./demo/web-shadow0573.jpg --output ./ --config ./config
 ## Train
 
 ```bash
-$ python train_net.py --num-gpus 2 --config-file ./config/LISA_101_FPN_3x.yaml
+$ python train_net.py --num-gpus 1 --config-file ./config/LISA_101_FPN_3x.yaml
 
 ```
-## Evaluation
 
-```bash
-$ python train_net.py --num-gpus 2 --config-file ./config/LISA_101_FPN_3x.yaml --eval-only --resume
-$ python SOAP.py
-```
-
-## Visualize
-```bash
-python visualize_json_results.py --ins_input ./output_light/inference/soba_instances_results.json --ass_input ./output_light/inference/soba_association_results.json --output ./output_light/results --dataset soba_cast_shadow_val_full
-```
 ## <a name="CitingLISA"></a> Citation
 If you use LISA, SOBA, or SOAP, please use the following BibTeX entry.
 
