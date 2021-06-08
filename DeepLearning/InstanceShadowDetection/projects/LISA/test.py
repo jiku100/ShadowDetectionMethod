@@ -105,51 +105,18 @@ if __name__ == "__main__":
             associations = information.pred_associations
             number_of_pair = max(associations)
             src = cv2.imread(path, cv2.IMREAD_COLOR)
-            # for i,mask in enumerate(information.pred_masks):
-            #     if associations[i] != 0:
-            #         mask = mask.cpu().numpy()
-            #         mask = mask.astype('uint8') * 255
-            #         mask = cv2.cvtColor(mask, cv2.COLOR_GRAY2BGR)
-            #         dst = cv2.bitwise_and(src, mask)
-            #         cv2.imwrite('./myTest/dst{}.png'.format(i),dst)
-            #    mask = np.array([mask,mask,mask,mask]).astype('uint8').transpose(1,2,0) * 255
-            #    io.imsave('./demo/mask{}.png'.format(i),mask)
-     
-            # #################################################################
-            # # Using middle
-            # src = cv2.imread(path, cv2.IMREAD_COLOR)
-
-            # if not os.path.isdir("./middle_result"):
-            #     os.mkdir("./middle_result")
+    
+            if not os.path.isdir("./myTest"):
+                os.mkdir("./myTest")
 
             for i, box in enumerate(boxes):
                 if associations[i] is not 0:
                     src = cv2.rectangle(src, tuple(map(int,box[:2])), tuple(map(int, box[2:])), tuple(map(int, np.random.choice(range(256), size=3))), 3)
             cv2.imwrite(os.path.join("./myTest", os.path.split(path)[-1]), src)
-            # middle_points = []
-            # slopes = []
-            # deltas = []
-            # light_points = []
-
-            # for pair in range(1,1+number_of_pair):
-            #     points = [0,0]
-            #     delta = [0,0]
-            #     for a_index, association in enumerate(associations):
-            #         if association == pair:
-            #             x = int((boxes[a_index][0] + boxes[a_index][2])/2)
-            #             y = int((boxes[a_index][1] + boxes[a_index][3])/2)
-            #             dx = int(abs(boxes[a_index][0] - x))
-            #             dy = int(abs(boxes[a_index][1] - y))
-            #             points[classes[a_index]] = (x, y)
-            #             delta[classes[a_index]] = (dx, dy)
-            #     middle_points.append(points)
-
-            # for light in middle_points:
-            #     cv2.arrowedLine(src, light[1], light[0], tuple(map(int, np.random.choice(range(256), size=3))), 3)
-            # cv2.imwrite(os.path.join("./middle_result", os.path.split(path)[-1]), src)
+            
 
             # #################################################################
-            # # Using delta
+            # # Using delta Light direction Draw
             # src = cv2.imread(path, cv2.IMREAD_COLOR)
             # if not os.path.isdir("./delta_result"):
             #     os.mkdir("./delta_result")
